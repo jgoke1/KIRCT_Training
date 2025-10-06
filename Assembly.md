@@ -1,5 +1,23 @@
-# Assembly 
 
+# Installation of tools and environment creation
+**Download** the **sr_assembly.yml** file. 
+
+**create** a directory for the assembly `mkdir sr_assembly` 
+
+move the **sr_assembly.yml** to the new directory you created `mv sr_assembly.yml sr_assembly/`
+
+check if **mamba** is installed `which mamba`, if not present use `conda install -n base -c conda-forge mamba`
+
+Now **create** a sr_assembly environment, `mamba env create -f sr_assembly.yml`
+
+**Activate** the new environment `conda activate sr_assembly`
+
+`mamba install conda-forge::pip` to install pip
+`mamba install conda-forge::python` to install python
+
+Install **Bactinspector**, `pip install bactinspector`
+
+# Assembly 
 *De novo* assembly is a very important step and the first for downstream genomical analysis, especially for bacterial genome. 
 
 ==With different types of raw reads, we need a different assembler==. 

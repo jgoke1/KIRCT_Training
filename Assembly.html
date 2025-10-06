@@ -46,8 +46,16 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="assembly" class="level1">
-<h1>Assembly</h1>
+<section id="installation-of-tools-and-environment-creation" class="level1">
+<h1>Installation of tools and environment creation</h1>
+<p><strong>Download</strong> the <strong>sr_assembly.yml</strong> file.</p>
+<p><strong>create</strong> a directory for the assembly <code>mkdir sr_assembly</code></p>
+<p>move the <strong>sr_assembly.yml</strong> to the new directory you created <code>mv sr_assembly.yml sr_assembly/</code></p>
+<p>check if <strong>mamba</strong> is installed <code>which mamba</code>, if not present use <code>conda install -n base -c conda-forge mamba</code></p>
+<p>Now <strong>create</strong> a sr_assembly environment, <code>mamba env create -f sr_assembly.yml</code></p>
+<p><strong>Activate</strong> the new environment <code>conda activate sr_assembly</code></p>
+<p><code>mamba install conda-forge::pip</code> to install pip <code>mamba install conda-forge::python</code> to install python</p>
+<p>Install <strong>Bactinspector</strong>, <code>pip install bactinspector</code></p>
 <p><em>De novo</em> assembly is a very important step and the first for downstream genomical analysis, especially for bacterial genome.</p>
 <p>==With different types of raw reads, we need a different assembler==.</p>
 <p><strong>!Note</strong>: you have to replace the {input} bracket with your input to be able to run the command.</p>
