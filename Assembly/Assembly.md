@@ -1,5 +1,5 @@
-
-# Installation of tools and environment creation
+# ASSEMBLY
+## Installation of tools and environment creation
 **Download** the **sr_assembly.yml** file. 
 
 **create** a directory for the assembly `mkdir sr_assembly` 
@@ -17,7 +17,27 @@ Now **create** a sr_assembly environment, `mamba env create -f sr_assembly.yml`
 
 Install **Bactinspector**, `pip install bactinspector`
 
-# Assembly 
+- ### Alternatively
+you can also go through this  installing every software to be used singly:
+
+- check if **mamba** is installed `which mamba`, if not present use `conda install -n base -c conda-forge mamba`
+
+- Now **create** a sr_assembly environment, `mamba env create -f sr_assembly`
+
+**Activate** the new environment `conda activate sr_assembly`
+
+- `mamba install bioconda::pip` to install **pip**
+- `mamba install bioconda::python` to install **python**
+- `mamba install bioconda::fastqc` to install **fastqc**
+- `mamba install bioconda::trimmomatic` to install **trimmomatic**
+- `mamba install bioconda::spades` to install **spades**
+- `mamba install bioconda::quast` to intall **quast**
+- `mamba install bioconda::checkm-genome` to intall **checkm-genome** to check genome completeness.
+- `mamba install bioconda::mash` to intall **mash**
+- `mamba install bioconda::multiqc` to intall **multiqc**
+- Install **Bactinspector**, `pip install bactinspector`
+
+## Assembly 
 *De novo* assembly is a very important step and the first for downstream genomical analysis, especially for bacterial genome. 
 
 ==With different types of raw reads, we need a different assembler==. 
@@ -43,3 +63,6 @@ We can try with other flags (**Optional if you have time**)
 - `-t 8`: use 4 threads/cores to run assembly. You can change the number to increase or decrease number of threads which suits your commputer
 - `-k 55,71,91,111` set of k-mer used for assembly. To reduce the time of assembly, you can reduce the number of number. K-mer must not higher the read length. 
 - `--cov-cutoff 20` minimum cut-off of deep of coverage. 
+
+### check the quality of your 
+`quast {input.assembly}`
